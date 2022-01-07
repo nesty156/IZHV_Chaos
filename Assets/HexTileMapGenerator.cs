@@ -9,7 +9,7 @@ public class HexTileMapGenerator : MonoBehaviour
     public float tileZoffset = 1.565f;
     private int mapWidth = 25;
 
-    private int mapHeight = 12;
+    private int mapHeight = 25;
     // Start is called before the first frame update
     void Start()
     {
