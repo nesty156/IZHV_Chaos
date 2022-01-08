@@ -7,9 +7,9 @@ public class HexTileMapGenerator : MonoBehaviour
     public GameObject hexTilePrefab;
     public float tileXoffset = 1.8f;
     public float tileZoffset = 1.565f;
-    private int mapWidth = 25;
+    private int mapWidth = 15;
 
-    private int mapHeight = 25;
+    private int mapHeight = 15;
     // Start is called before the first frame update
     void Start()
     {

@@ -40,10 +40,23 @@ public class ShotBehavior : MonoBehaviour {
 				collisionExplosion, transform.position, transform.rotation);
 			AudioSource.PlayClipAtPoint(explosionClip, transform.position, audioVolume);
 			Destroy(gameObject);
+			var explosionPosition = transform.position;
+			var explosionRadius = 0.6f;
+			Collider[] colliders = Physics.OverlapSphere(explosionPosition, explosionRadius);
+			foreach (var col in colliders)
+			{
+				if (col.name == "stand")
+				{
+					TurretController.Instance.TakeHit(1f);
+				}
+				if (col.GetComponent<Collider>().tag == "Platform")
+				{
+					Destroy(col.GetComponent<Collider>().gameObject);
+				}
+			}
 			Destroy(explosion, 1f);
 		}
-
-
+		
 	}
 
 }

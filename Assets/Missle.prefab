@@ -52,6 +52,7 @@ MonoBehaviour:
   Speed: 6
   RotateSpeed: 3
   timeHoming: 2.3
+  flyUp: 0.5
   collisionExplosion: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
     type: 3}
   explosionClip: {fileID: 8300000, guid: 73f8e582b2cab3f468c93d5e37cc3213, type: 3}
@@ -403,6 +404,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1675276786105152534, guid: e30dd3f103964a74d8d3de9a812d2a4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 114faee5c60ee4c43b28ba9b9bd4fcc2, type: 2}
+    - target: {fileID: -240317216573388742, guid: e30dd3f103964a74d8d3de9a812d2a4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 114faee5c60ee4c43b28ba9b9bd4fcc2, type: 2}
     - target: {fileID: 919132149155446097, guid: e30dd3f103964a74d8d3de9a812d2a4d,
         type: 3}
       propertyPath: m_Name

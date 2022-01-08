@@ -45,8 +45,10 @@ public class TankController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collisionInfo)
     {
-        //Debug.Log(collisionInfo.collider.name);
-        IsGrounded = true;
+        if (collisionInfo.collider.GetComponent<Collider>().tag == "Platform")
+        {
+            IsGrounded = true;
+        }
     }
 
     /// <summary>
@@ -62,7 +64,7 @@ public class TankController : MonoBehaviour
         }
 
         // Movement
-        if (ForwardInput != 0f)
+        if (ForwardInput != 0f  && (IsGrounded || Time.time < m_jumpTimeStamp+2f))
         {
             Vector3 move = transform.up * Mathf.Clamp(ForwardInput, -1f, 1f) *
                            moveSpeed * Time.fixedDeltaTime;
@@ -79,6 +81,12 @@ public class TankController : MonoBehaviour
                 m_jumpTimeStamp = Time.time + jumpCooldown;
             }
         }
+
+        if (transform.position.y < -5f)
+        {
+            GameManager.Instance.UpdateGameState(GameManager.GameState.Lose);
+        }
+
 
     }
 }

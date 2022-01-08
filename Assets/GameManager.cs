@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.GameMenu);
      }
 
-    public static void UpdateGameState(GameState newState)
+    public void UpdateGameState(GameState newState)
     {
         State = newState;
 
