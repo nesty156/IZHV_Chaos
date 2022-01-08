@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,10 @@ public class Dropper : MonoBehaviour
     {
         this.gameObject.GetComponent<MeshRenderer> ().material = Mat1;
     }
+
     private void OnCollisionEnter(Collision collisionInfo)
     {
-        if (collisionInfo.collider.name.Equals("tank"))
+        if (collisionInfo.collider.name.Equals("tankPlayer"))
         {
             durability--;
             switch(durability) 
@@ -34,8 +36,11 @@ public class Dropper : MonoBehaviour
             if (durability <= 0)
             {
                 Destroy(this.gameObject,destroyIn);
-                Debug.Log("Destroyed:" + this.name);
             }
         }
+        /*else if (collisionInfo.collider.name.Equals("Missle(Clone)"))
+        {
+            Destroy(this.gameObject);
+        }*/
     }
 }
